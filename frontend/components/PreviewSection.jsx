@@ -30,7 +30,7 @@ export default function PreviewSection({ imageSrc, showAnalyze, setLoading, load
       {loading && (
         <div className="loading">
           <div className="spinner"></div>
-          <p>Analyzing image with neural network...</p>
+          <p>Passing Image through Neural Network</p>
         </div>
       )}
     </div>
