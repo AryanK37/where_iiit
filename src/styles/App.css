@@ -69,14 +69,26 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-
-main {
-  flex: 1;
-  padding: 2rem 1rem;
+.upload-preview-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
 }
+
+.upload-section,
+.preview-section {
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
 
 section.upload {
   background-color: var(--white);

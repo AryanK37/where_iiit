@@ -1,5 +1,5 @@
 export default function ResultsSection({ coordinates }) {
-  const { lat, lng, confidence } = coordinates;
+  const { lat, lng, Angle} = coordinates;
   if (lat === '--') return null;
 
   return (
@@ -15,8 +15,8 @@ export default function ResultsSection({ coordinates }) {
           <div className="coordinate-value">{lng}</div>
         </div>
         <div className="coordinate-card">
-          <div className="coordinate-label">Confidence</div>
-          <div className="coordinate-value">{confidence}</div>
+          <div className="coordinate-label">Angle</div>
+          <div className="coordinate-value">{Angle}</div>
         </div>
       </div>
       <div className="map-placeholder">

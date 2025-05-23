@@ -6,7 +6,7 @@ export default function PreviewSection({ imageSrc, showAnalyze, setLoading, load
       setCoordinates({
         lat: '28.7041° N',
         lng: '77.1025° E',
-        confidence: '92%',
+        Angle : '92',
       });
     }, 2000);
   }
