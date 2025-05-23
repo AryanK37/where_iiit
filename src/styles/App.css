@@ -34,7 +34,7 @@ body {
 }
 
 .logo-text {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -48,11 +48,27 @@ body {
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #555;
   max-width: 600px;
   margin: 0 auto;
 }
+
+
+.hero-image {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
 
 main {
   flex: 1;
