@@ -1,7 +1,7 @@
 :root {
   --primary-color: #004080;
   --secondary-color: #0066cc;
-  --background: #f0f4f8;
+  --background: #ffffff;
   --text: #333;
   --white: #fff;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -25,14 +25,33 @@ body {
   flex-direction: column;
 }
 
-header {
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 1.5rem 1rem;
+.header {
   text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  box-shadow: var(--shadow);
+  padding: 3rem 1rem;
+  background-color: #fff;
+  color: #111;
+  font-family: 'Raleway', sans-serif;
+}
+
+.logo-text {
+  font-size: 5rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.divider {
+  width: 80px;
+  border: 1px solid #111;
+  margin: 1rem auto;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 main {
