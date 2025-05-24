@@ -119,6 +119,15 @@ input[type="file"] {
   font-size: 1rem;
 }
 
+.image-preview {
+  width: 400px;
+  height: 300px;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+
 button {
   margin-top: 2rem;
   padding: 0.75rem 2rem;
