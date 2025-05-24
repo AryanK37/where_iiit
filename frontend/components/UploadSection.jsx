@@ -1,10 +1,11 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
 export default function UploadSection({ setImageSrc, setShowAnalyze }) {
   const inputRef = useRef();
 
   function handleFile(file) {
-    if (!file.type.startsWith('image/')) return;
+    console.log("UploadSection handleFile called");
+    console.log(file);
     const reader = new FileReader();
     reader.onload = () => {
       setImageSrc(reader.result);
@@ -30,14 +31,16 @@ export default function UploadSection({ setImageSrc, setShowAnalyze }) {
       >
         <div className="upload-icon">📁</div>
         <div className="upload-text">
-          Drag and drop your campus photo here<br />or click to browse
+          Drag and drop your campus photo here
+          <br />
+          or click to browse
         </div>
         <button className="upload-btn">Choose File</button>
         <input
           type="file"
           ref={inputRef}
           className="file-input"
-          style={{ display: 'none' }}
+          style={{ display: "none" }}
           accept="image/*"
           onChange={(e) => handleFile(e.target.files[0])}
         />

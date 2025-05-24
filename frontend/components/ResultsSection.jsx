@@ -3,7 +3,7 @@ export default function ResultsSection({ coordinates }) {
   if (lat === '--') return null;
 
   return (
-    <div className="results-section">
+    <div className="results-section"> 
       <h2 className="section-title">📍 Location Results</h2>
       <div className="coordinates-display">
         <div className="coordinate-card">

@@ -11,7 +11,7 @@ export default function Header() {
 
       <div className="hero-image">
         <a href="https://www.iiit.ac.in/" target="_blank" rel="noopener noreferrer">
-        <img src="/public/iiit.png" alt="IIIT Campus" />
+        <img src="/iiit.png" alt="IIIT Campus" />
         </a>
       </div>
     </>
