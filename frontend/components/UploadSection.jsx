@@ -29,7 +29,6 @@ export default function UploadSection({ setImageSrc, setShowAnalyze }) {
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleDrop}
       >
-        <div className="upload-icon">📁</div>
         <div className="upload-text">
           Drag and drop your campus photo here
           <br />

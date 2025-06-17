@@ -8,30 +8,50 @@ export default function PreviewSection({
   async function handleAnalyze() {
     setLoading(true);
     console.log("handleAnalyze called");
-    const imageFile = await fetch(imageSrc)
-      .then((res) => res.blob())
-      .then((blob) => {
-        const file = new File([blob], "image.jpg", { type: "image/jpeg" });
-        return file;
+
+    try {
+      const imageFile = await fetch(imageSrc)
+        .then((res) => res.blob())
+        .then((blob) => {
+          const file = new File([blob], "image.jpg", { type: "image/jpeg" });
+          return file;
+        });
+
+      console.log("imageFile", imageFile);
+
+      const formData = new FormData();
+      formData.append("image", imageFile);
+
+      const res = await fetch("http://localhost:5000/analyze_single", {
+        method: "POST",
+        body: formData,
       });
-    console.log("imageFile", imageFile);
-    // console.log("imageSrc", imageSrc);
-    const formData = new FormData();
-    formData.append("image", imageFile);
 
-    const res = await fetch("http://localhost:5000/analyze", {
-      method: "POST",
-      body: formData,
-    });
+      const data = await res.json();
+      console.log("data from backend", data);
 
-    const data = await res.json();
-    setLoading(false);
-    setCoordinates(data);
+      setCoordinates({
+        lat: data.latitude.toFixed(6),
+        lng: data.longitude.toFixed(6),
+        Angle: data.angle,
+      });
+
+      console.log("coordinates state set to", {
+        lat: data.latitude.toFixed(6),
+        lng: data.longitude.toFixed(6),
+        Angle: data.angle,
+      });
+
+    } catch (error) {
+      console.error("Error during analysis:", error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <div className="preview-section">
-      <h2 className="section-title">👀 Preview</h2>
+      <h2 className="section-title">Preview</h2>
       {imageSrc ? (
         <img src={imageSrc} className="image-preview" alt="Preview" />
       ) : (
