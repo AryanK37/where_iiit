@@ -103,30 +103,10 @@ def analyze_single():
     print(f"stds {train_stds[0]},{train_stds[1]}")
     lat = lat_norm * train_stds[0] + train_means[0]
     lng = lng_norm * train_stds[1] + train_means[1]
-    # lat,lng=lat_norm,lng_norm
-
-    # K_lat = 12532
-    # K_lng = 1855
-    # K_lat = 12670
-    # K_lng = 1824
-
-    # scaled_lat = lat / K_lat
-    # scaled_lng = lng / K_lng
 
     base_lat = 17.226564
-    # base_lat += 0.002201
-    #bank
-    base_lat+=0.001084
-    base_lng = 78.205519# approx min longitude
-    # base_lng -= 0.002531
-    #bank
-    base_lng -= 0.0009629999999987149
+    base_lng = 78.205519 # approx min longitude
 
-    # base_lat = 17.2265613220339 after taking average
-    # base_lng = 78.2055182711864
-
-    # scaled_lat = (lat*1_000_000 - train_means[0]) / train_stds[0]
-    # scaled_lng = (lng*1_000_000 - train_means[1]) / train_stds[1]
     scaled_lat = lat + base_lat*1_000_000
     scaled_lng = lng + base_lng*1_000_000
     scaled_lat = scaled_lat / 1_000_000
@@ -135,7 +115,6 @@ def analyze_single():
     # placeholder angle
     angle = 90
 
-    # return JSON
     print(f"Predicted de-normalized coordinates: Latitude={lat}, Longitude={lng}")
     print(f"Scaled coordinates: Scaled Latitude={scaled_lat}, Scaled Longitude={scaled_lng}")
     print(f"Angle: {angle}")

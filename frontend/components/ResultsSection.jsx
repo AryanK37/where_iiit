@@ -17,8 +17,8 @@ export default function ResultsSection({ coordinates }) {
           <div className="coordinate-value">{lng}</div>
         </div>
         <div className="coordinate-card">
-          <div className="coordinate-label">Angle</div>
-          <div className="coordinate-value">{Angle}</div>
+          {/* <div className="coordinate-label">Angle</div>
+          <div className="coordinate-value">{Angle}</div> */}
         </div>
       </div>
       <MapSection lat={parseFloat(lat)} lng={parseFloat(lng)} angle={parseFloat(Angle)} />
