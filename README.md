@@ -1,12 +1,75 @@
-# React + Vite
+# Where IIIT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+This application, “Where IIIT”, allows users to upload a campus photo and determine where it was taken by sending it to a backend neural-network. After uploading, the app passes the image through a neural network and displays a preview and shows the resulting latitude, longitude, and an arrow marker on a map. You can also watch a demo video of the project (`video_demo1.webm`)
+## Installation
 
-Currently, two official plugins are available:
+1. **Clone the repository**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   ```bash
+   git clone https://github.com/AryanK37/where_iiit.git
+   cd where_iiit
+   ```
+2. **Install dependencies**
 
-## Expanding the ESLint configuration
+   ```bash
+   npm install
+   ```
+3. **Start the development server**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```bash
+   npm run dev
+   # in another terminal
+   cd where_iiit/backend
+   python3 app.py 
+   ```
+
+   The app will run at `http://localhost:5173/`
+
+## Usage
+
+1. Open the app in your browser.
+2. Click or drag-and-drop to upload a campus photo.
+3. Once preview appears, click “Analyze Location”.
+4. Wait for a forward pass of neural network.
+5. After analysis, latitude and longitude appear, and the map centers on that location with a marker.
+
+## File Structure 
+
+```
+├── backend
+│   ├── app.py
+│   ├── latlong_model.pth
+│   ├── requirements.txt
+│   ├── train_means.npy
+│   └── train_stds.npy
+├── eslint.config.js
+├── frontend
+│   ├── App.jsx
+│   ├── assets
+│   ├── components
+│   │   ├── Header.jsx
+│   │   ├── MapSection.jsx
+│   │   ├── PreviewSection.jsx
+│   │   ├── ResultsSection.jsx
+│   │   └── UploadSection.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   └── styles
+│       └── App.css
+├── images
+│   ├── 2022113007_1.jpg
+│   ├── img_0147.jpeg
+│   ├── img_0340.jpeg
+│   └── img_3581.jpg
+├── index.html
+├── node_modules/
+├── package.json
+├── package-lock.json
+├── plot.jpeg
+├── public
+│   └── iiit.png
+├── README.md
+├── video_demo1.webm
+└── vite.config.js
+```
